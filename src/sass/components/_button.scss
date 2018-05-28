@@ -14,12 +14,12 @@
         justify-content: center;
     }
     
-    &.purple,
-    &.purple-complementary:hover {
-        background: rebeccapurple;
-        color: whitesmoke;
+    &.primary,
+    &.primary-complementary:hover {
+        background: $primary;
+        color: $white;
     }
-    &.primary {
+    &.dark {
         background: $dark;
         color: $white;
         &:hover {
@@ -27,7 +27,7 @@
         }
     }
     &.processing {
-        background: $grey;
+        background: $processing;
         cursor: wait;
     }
     &.danger {

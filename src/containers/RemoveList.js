@@ -15,8 +15,8 @@ const MapDispatchToProps = ( dispatch ) => ({
 })
 
 const RemoveList = ({list, token, removeListHandler}) => (
-    <Button type="danger" text="Delete list" 
-        onClick={() => removeListHandler(token, list)} 
+    <Button classes="danger" text="Delete list" 
+        clickHandler={() => removeListHandler(token, list)} 
     />  
 )
 RemoveList.propTypes = {

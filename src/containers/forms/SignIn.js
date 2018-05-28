@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {renderCheckbox, renderPasswordInput, renderTextInput} from './inputCreators';
 import {connect} from 'react-redux';
-
+import { Button } from '../../components/Button';
 
 let SignIn = ({
     handleSubmit,
@@ -23,16 +23,11 @@ let SignIn = ({
         <br/>
         <Field name="memorize" component={renderCheckbox} label="remember me?"/>
         <br/>
-        <button
-            className={`button center ${submitting
-            ? 'submitting'
-            : 'primary'}`}
-            type="submit"
-            disabled={submitting}>
-            {submitting
-                ? 'Logging in'
-                : 'Log in'}
-        </button>
+        <Button text={submitting ? 'Signing in' : 'Sign in'}
+            classes={submitting ? 'submitting' : 'dark'}
+            disabled={submitting}
+            action="submit" 
+        />
     </form>
 )
 

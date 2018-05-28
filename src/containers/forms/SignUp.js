@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {renderCheckbox, renderPasswordInput, renderTextInput} from './inputCreators';
+import { Button } from '../../components/Button';
 
 let SignUp = ({handleSubmit, submitHandler}) => (
     <form className="flex-center-v" onSubmit={handleSubmit(submitHandler)}>
@@ -16,7 +17,7 @@ let SignUp = ({handleSubmit, submitHandler}) => (
             name="passwordrepeat"
             component={renderPasswordInput}
             placeholder="Repeat your password"/>
-        <button type="submit">Register</button>
+            <Button type="submit" text="register" classes="dark" />
     </form>
 )
 

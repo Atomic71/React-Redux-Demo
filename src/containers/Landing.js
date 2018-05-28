@@ -5,19 +5,19 @@ import {connect} from 'react-redux';
 import {tryLogin} from '../store/actions/auth';
 import { SignInForm } from './forms/SignIn';
 import { SignUpForm } from './forms/SignUp';
+import { Button } from '../components/Button';
 
 
-const classes = "button purple";
-const complementaryClasses = "button purple-complementary";
-
-const FormToggle = ({changeSelected, toDisplay}) => (
+const FormToggle = ({changeSelected, toDisplay}) => console.log(changeSelected)||(
     <div className="button-group">
-        <button 
-            className={toDisplay === "login" ? classes : complementaryClasses}
-            onClick={() => changeSelected("toDisplay", "login")}>Login</button>
-        <button 
-            onClick={() => changeSelected("toDisplay", "registration")}
-            className={toDisplay === "registration" ? classes : complementaryClasses }>Sign up</button>
+        <Button text="Log In"
+            clickHandler={() => changeSelected("toDisplay", "login")}
+            classes={toDisplay === "login" ? "primary" : "primary-complementary"} 
+        />
+        <Button text="Sign Up"
+            clickHandler={() => changeSelected("toDisplay", "signup")}
+            classes={toDisplay === "signup" ? "primary" : "primary-complementary"} 
+        />
     </div>
 )
 

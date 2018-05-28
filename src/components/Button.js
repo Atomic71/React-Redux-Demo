@@ -1,14 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-export const Button = ({type, onClick, text}) => (
-    <button className={`button ${type}`} onClick={onClick}>
+// button types
+
+// primary - color: primary 
+// danger - color: red
+// processing - color: grey
+// dark - color: dark
+//
+
+
+export const Button = ({classes, clickHandler, text, type, disabled}) => (
+    <button className={`button ${classes}`} onClick={clickHandler} type={type} disabled={disabled}>
         {text}
     </button>
 )
 
 Button.propTypes = {
+    classes: PropTypes.string,
+    clickHandler: PropTypes.func,
+    text: PropTypes.string.isRequired,
     type: PropTypes.string,
-    onClick: PropTypes.func.isRequired,
-    text: PropTypes.string.isRequired
+    disabled: PropTypes.bool,
 }
