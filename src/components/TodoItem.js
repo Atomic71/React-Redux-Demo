@@ -32,17 +32,17 @@ const MapDispatchToProps = (dispatch) => {
 }
 
 
-@autobind
 class TodoItem extends Component {
     state = {
         isBeingEdited: false,
     }
     
-
+    @autobind
     toggleViewHandler() { 
         this.setState(prevState => ( {isBeingEdited: !prevState.isBeingEdited} ))
     }
 
+    @autobind
     prepareItemHandler() {
         const currentName = this.props.item.description;
         const { setInitialName } = this.props;
@@ -50,11 +50,13 @@ class TodoItem extends Component {
         this.toggleViewHandler();
     } 
 
+    @autobind
     toggleItemHandler(){ 
         const { toggleItem, item, token} = this.props;
         toggleItem(item, token); 
     }
     
+    @autobind
     deleteItemHandler(){ 
         const {deleteItem, item, token} = this.props;
         deleteItem(item, token);
@@ -68,7 +70,7 @@ class TodoItem extends Component {
             deleteItem={this.deleteItemHandler} 
             changeItem={this.prepareItemHandler}
             toggleItem={this.toggleItemHandler} 
-            />
+        />
 
         isBeingEdited && ( todoItem = <ChangeItemForm 
             toggleView={this.toggleViewHandler}
