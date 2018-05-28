@@ -3,7 +3,7 @@ import { Link, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { fetchLists } from '../store/actions/list/index';
-import { tryLogout } from '../store/actions/auth/index';
+import { tryLogout } from '../store/actions/auth';
 import { AddListForm } from './forms/AddList'
 import { ListOverviewConnected as ListOverview } from './ListOverview';
 import { ErrorDivConnected as ErrorDiv } from '../components/ErrorDiv';

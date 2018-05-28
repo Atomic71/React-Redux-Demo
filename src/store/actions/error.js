@@ -1,4 +1,4 @@
-import * as actionTypes from '../actionTypes';
+import * as actionTypes from './actionTypes';
 
 export const showErrorDiv = (msg) => ({ type: actionTypes.SHOW_ERROR_DIV, error: msg});
 

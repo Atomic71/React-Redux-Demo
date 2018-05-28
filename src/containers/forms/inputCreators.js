@@ -4,7 +4,7 @@ export const renderTextInput = ({
     input,  
     placeholder, 
     meta : { active, error, valid, touched, pristine, dirty, warning } 
-    }) => console.log(input) || (
+    }) => (
     <div className="InputElement">
         {touched && pristine && (<p className="InputElement-Warning">{warning}</p>)}
         <input {...input}

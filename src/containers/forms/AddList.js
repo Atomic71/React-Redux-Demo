@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { renderInputWithButton } from './inputCreators';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createList } from '../../store/actions/list';
+import { createList } from '../../store/actions/list/create';
 import { showErrorDiv, hideErrorDiv }  from '../../store/actions/error'
 
 
@@ -16,12 +16,8 @@ class AddList extends Component {
     AddListHandler = (values) => {
         const NewListName = values.AddList;
         const { CreateList, token, showError, history: { push }}  = this.props;
-        return new Promise((resolve, reject) => {
-            const resolveCb = resolve;
-            const rejectCb = reject;
-            CreateList(token, NewListName, resolveCb, rejectCb)
-            }
-        ).then((id) => push(`/overview/${id}`))
+        return new Promise((resolve, reject) => CreateList(token, NewListName, resolve, reject))
+        .then((id) => push(`/overview/${id}`))
         .catch((msg) => showError(msg));
     } 
 
@@ -49,7 +45,7 @@ class AddList extends Component {
 
 const MapStateToProps = (state) => ({
     token: state.userData.token,
-    hasError: state.errors.div,
+    hasError: state.errorDiv,
     
 })
 

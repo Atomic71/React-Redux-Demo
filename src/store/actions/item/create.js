@@ -1,22 +1,20 @@
 import * as actionTypes from '../actionTypes';
-import {createItemService} from '../axiosInstances'
+import {axiosInst} from '../axiosInstances'
 
-
-const createItemInit = () => ({ type: actionTypes.CREATE_ITEM_INIT });
-const createItemFail = (err) => ({ type: actionTypes.CREATE_ITEM_FAIL, err: err });
-const createItemPass = (item) => ({ type: actionTypes.CREATE_ITEM_PASS, item: item });
+const createItemPass = (item) => ({type: actionTypes.CREATE_ITEM_PASS, item: item});
+const createItemService = (name, listId, userToken) => axiosInst.post(
+    `/${listId}/entries`,
+    {description: name},
+    {headers: {"Authorization": `Token ${userToken}`}}
+);
 
 export const createItem = (name, listId, userToken, resolveCb, rejectCb) => {
     return (dispatch) => {
-        dispatch(createItemInit());
         createItemService(name, listId, userToken)
         .then(res => {
-            dispatch(createItemPass(res.data));
-            resolveCb('Add Item Success');
+            dispatch(createItemPass(res.data))
+            resolveCb();
         })
-        .catch(err => {
-            rejectCb('Add Item Rejected')
-            dispatch(createItemFail(err));
-        });
+        .catch(err => rejectCb('Add Item Rejected'));
     }
 }

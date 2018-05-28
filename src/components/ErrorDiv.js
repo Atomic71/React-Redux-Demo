@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import {CSSTransition} from 'react-transition-group';
 import PropTypes from 'prop-types';
 
-import {hideErrorDiv} from '../store/actions/error/index';
+import {hideErrorDiv} from '../store/actions/error';
 
-const MapStateToProps = (state) => ({ error: state.errors.div });
+const MapStateToProps = (state) => ({ error: state.errorDiv });
 const MapDispatchToProps = (dispatch) => ({ hideError: () => dispatch(hideErrorDiv()) })
 
 

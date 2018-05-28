@@ -10,7 +10,7 @@ let SignIn = ({
     submitting,
     shouldAnimate,
     ...props
-}) => console.log(shouldAnimate)||(
+}) => (
     <form
         className={`flex-center-v ${shouldAnimate && 'rejected'}`}
         onSubmit={handleSubmit(submitHandler)}>

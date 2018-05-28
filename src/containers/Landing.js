@@ -8,7 +8,7 @@ import { SignUpForm } from './forms/SignUp';
 import { Button } from '../components/Button';
 
 
-const FormToggle = ({changeSelected, toDisplay}) => console.log(changeSelected)||(
+const FormToggle = ({changeSelected, toDisplay}) => (
     <div className="Button-group">
         <Button text="Log In"
             clickHandler={() => changeSelected("toDisplay", "login")}

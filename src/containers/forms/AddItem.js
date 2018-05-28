@@ -13,14 +13,11 @@ const MinLength0 = MinLength(0);
 class AddItem extends Component {
     AddItemHandler = (values) => {
         const NewItemName = values.NewItem;
-        const { CreateItem, token, showError, listId}  = this.props;
-        return new Promise((resolve, reject) => {
-            const resolveCb = resolve;
-            const rejectCb = reject;
-            CreateItem(NewItemName, listId, token, resolveCb, rejectCb)
-            }
-        ).then((msg) => console.log(msg))
-        .catch( () => (showError('error')) );
+        console.log(this.props)
+        const { CreateItem, token, showError, listId, reset}  = this.props;
+        return new Promise((resolve, reject) => CreateItem(NewItemName, listId, token, resolve, reject))
+        .then(()=>reset())
+        .catch( (msg) => (showError(msg)) );
     } 
 
     clearErrorHandler = () => this.props.hasError && this.props.hideError();
@@ -46,7 +43,7 @@ class AddItem extends Component {
 
 const MapStateToProps = (state) => ({
     token: state.userData.token,
-    hasError: state.errors.div,
+    hasError: state.errorDiv,
     
 })
 

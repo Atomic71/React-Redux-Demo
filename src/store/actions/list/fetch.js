@@ -1,21 +1,16 @@
 import * as actionTypes from '../actionTypes';
-import axios from 'axios';
+import {axiosInst} from '../axiosInstances';
 
 
-const fetchListsInit = () => ({ type: actionTypes.FETCH_LISTS_INIT })
 const fetchListsFail = () => ({ type: actionTypes.FETCH_LISTS_FAIL })
 const fetchListsPass = (lists) => ({ type: actionTypes.FETCH_LISTS_PASS, lists: lists })
 
+const fetchListsService = (token) => axiosInst.get(
+    '/', {headers: {"Authorization": `token ${token}`}}
+)
 
-export const fetchLists = (token) => {
-    return (dispatch) => {
-        dispatch(fetchListsInit());
-        axios.get("https://radiant-escarpment-95925.herokuapp.com/api/todos/", {
-                headers: {
-                    "Authorization": `token ${token}`
-                }
-            })
-            .then( (res) => dispatch(fetchListsPass(res.data)))
-            .catch((err) => console.log(err) || dispatch(fetchListsFail()))
-    }
-}
+
+export const fetchLists = (token) => 
+    (dispatch) => fetchListsService(token)
+        .then((res) => dispatch(fetchListsPass(res.data)))
+        .catch((err) => dispatch(fetchListsFail()))
