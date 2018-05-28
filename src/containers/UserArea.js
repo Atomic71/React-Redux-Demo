@@ -9,15 +9,15 @@ import { ListOverviewConnected as ListOverview } from './ListOverview';
 import { ErrorDivConnected as ErrorDiv } from '../components/ErrorDiv';
 import { TodoListConnected as TodoList } from './TodoList';
 
-const NewList = () => (
-    <div className="NewList">
-        <h2>Please enter a list name to start getting stuff done!"</h2>
+const AddList = () => (
+    <div className="AddList-wrapper">
+        <h2 className="AddList-Heading">Please enter a list name to start getting stuff done!"</h2>
         <AddListForm />
     </div>
 )
 const UserDashboard = () => (
-    <div className="listOfLists">
-        <h2>Pink Panther's lists</h2>
+    <div className="UserDashboard">
+        <h2 className="UserDashboard-heading">Pink Panther's lists</h2>
         <ListOverview />
     </div>
 )
@@ -27,7 +27,7 @@ const UserWorkspace = () => (
         <ErrorDiv />
         <Switch>
             <Route path="/overview/:id" component={TodoList}/>
-            <Route path="/overview" render={NewList}/>
+            <Route path="/overview" render={AddList}/>
         </Switch>
     </div>
 )

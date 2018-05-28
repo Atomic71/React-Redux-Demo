@@ -50,4 +50,4 @@ const warn = values => {
 // const MapStateToProps = (state) => ({ })
 // SignIn = connect(MapStateToProps)(SignIn)
 
-export const SignInForm = reduxForm({form: "authentication", validate, warn})(SignIn)
+export const SignInForm = reduxForm({form: "SignIn", validate, warn})(SignIn)

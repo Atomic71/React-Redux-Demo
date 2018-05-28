@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm, initialize } from 'redux-form';
 
-import { renderInputWithIcon } from './inputCreators'; 
+import { renderInputWithButton } from './inputCreators'; 
 import { updateItem } from '../../store/actions/item/index'
 import { showErrorDiv }  from '../../store/actions/error';
 
@@ -33,7 +33,7 @@ class ChangeItem extends Component {
                     autoComplete="off"                     
                     name="NewName"
                     type="text"
-                    component={renderInputWithIcon} 
+                    component={renderInputWithButton} 
                     validate={MinLength0} 
                 />
             </form>

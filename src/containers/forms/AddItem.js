@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { renderInputWithIcon } from './inputCreators';
+import { renderInputWithButton } from './inputCreators';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { showErrorDiv, hideErrorDiv }  from '../../store/actions/error';
@@ -36,7 +36,7 @@ class AddItem extends Component {
                     placeholder="Enter a new item name"
                     name="NewItem"
                     type="text"
-                    component={renderInputWithIcon} 
+                    component={renderInputWithButton} 
                     validate={MinLength0} />
             </form>
         )

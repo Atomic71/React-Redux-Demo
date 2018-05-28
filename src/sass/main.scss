@@ -3,26 +3,24 @@
 @import "HelperClasses";
 
 
-@import "containers/Landing";
-@import "containers/login-wrapper";
-@import "containers/overview";
-@import "containers/newListArea";
-@import "containers/Todo-List";
-@import "containers/listOfLists";
+@import "containers/Overview";
+@import "containers/AddList";
+@import "containers/TodoList";
 @import "containers/Workspace";
-@import "containers/form";
+@import "containers/UserDashboard";
+@import "containers/Landing";
 
-@import "components/input";
-@import "components/todo-item";
-@import "components/button";
-@import "components/error-div";
-@import "components/spinner";
-@import "components/info";
+@import "components/InputElement";
+@import "components/TodoItem";
+@import "components/Button";
+@import "components/ErrorDiv";
+@import "components/Spinner";
+@import "components/InfoMessage";
+
+@import "keyframes/slideDown";
 
 
-@import "animations/item";
-@import "animations/list";
-@import "animations/error-div";
+@import "animations/Fade";
 
 /* uncomment to resume
 // @import "containers/weedthoughts/FlexPlayground.scss" */

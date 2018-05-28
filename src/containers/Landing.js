@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import autobind from 'autobind-decorator';
 import {connect} from 'react-redux';
 
-import {tryLogin} from '../store/actions/auth';
+import { tryLogin } from '../store/actions/auth';
 import { SignInForm } from './forms/SignIn';
 import { SignUpForm } from './forms/SignUp';
 import { Button } from '../components/Button';
 
 
 const FormToggle = ({changeSelected, toDisplay}) => console.log(changeSelected)||(
-    <div className="button-group">
+    <div className="Button-group">
         <Button text="Log In"
             clickHandler={() => changeSelected("toDisplay", "login")}
             classes={toDisplay === "login" ? "primary" : "primary-complementary"} 

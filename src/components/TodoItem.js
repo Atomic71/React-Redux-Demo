@@ -10,9 +10,9 @@ import { initialize } from 'redux-form'
 const Item = ({item, toggleItem, changeItem, deleteItem}) => (
     <div 
         key={item.id} 
-        className={`todo ${item.completed ? "completed" : "" }`} >
-        <p className="todo-text">{item.description}</p>
-        <div className="todo-controls">
+        className={`TodoItem ${item.completed ? "completed" : "" }`} >
+        <p className="TodoItem-text">{item.description}</p>
+        <div className="TodoItem-controls">
             <Icon onClickHandler={toggleItem} icon="clipboard" itemTitle="mark as completed" />
             <Icon onClickHandler={deleteItem} icon="bin" itemTitle="delete item" />
             <Icon onClickHandler={changeItem} icon="pencil" itemTitle="change name" />

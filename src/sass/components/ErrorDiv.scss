@@ -1,5 +1,4 @@
-.error {
-    &-div {
+.ErrorDiv {
         display: flex;
         justify-content: space-between;
         align-self: stretch;
@@ -13,7 +12,6 @@
         left: 0;
         right: 0;
         z-index: 200;
-    }
     &-text {
         font-size: 1.2rem;
     }
@@ -24,4 +22,20 @@
             color: $dark;
         }
     }
+}
+
+.slide-enter {
+    opacity: 0;
+    transform: translateY(-100%)
+}
+
+.slide-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all .3s;
+}
+
+.slide-exit-active {
+    opacity: 0;
+    transition: all .3s;
 }

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {ConnectedTodoItem as TodoItem} from '../components/TodoItem';
 
 const TodoItems = ({ data, listId }) => (
-    <div className="certain-list-items">
+    <div className="TodoList-items">
         {data.map(
             entry => entry.todo_list === listId 
             ? <TodoItem key={entry.id} item={entry} /> 

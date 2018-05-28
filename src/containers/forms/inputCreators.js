@@ -34,7 +34,7 @@ export const renderPasswordInput = (props) => (
 )
 
 export const renderCheckbox = (props) => (
-    <div className="LabeledInput">
+    <div className="InputElement-withLabel">
         <label htmlFor={props.name}>
         <input type="checkbox" {...props.input}/>
         <p>{props.label}</p>
@@ -42,11 +42,11 @@ export const renderCheckbox = (props) => (
     </div>
 )
 
-export const renderInputWithIcon = ({
+export const renderInputWithButton = ({
     input, type, required, placeholder, meta, autoComplete, value,
     meta:{ submitting, error, warning}
     }) => (
-            <div className="InputWithButton">
+            <div className="InputElement-withButton">
             {meta.visited && meta.submitFailed && !submitting && error && <span className="input-error">{error}</span> }
                 <input {...input}
                     autoComplete={autoComplete}

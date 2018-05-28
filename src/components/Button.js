@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
 
 
 export const Button = ({classes, clickHandler, text, type, disabled}) => (
-    <button className={`button ${classes}`} onClick={clickHandler} type={type} disabled={disabled}>
+    <button className={`Button ${classes}`} onClick={clickHandler} type={type} disabled={disabled}>
         {text}
     </button>
 )

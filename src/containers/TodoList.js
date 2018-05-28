@@ -8,16 +8,17 @@ import { RemoveListConnected as RemoveList } from './RemoveList';
 import { TodoItemsConnected as TodoItems } from './TodoItems';
 
 
-const List = ({list}) => (
-    <div className="Todo-List">
-        <h2>{list.title}</h2>
+const List = ({list, list: {title, id}}) => (
+    <div className="TodoList">
+        <h2 className="TodoList-heading">{title}</h2>
         <RemoveList list={list} />
-        <AddItem listId={list.id}/>
-        <TodoItems listId={list.id} />
+        <AddItem listId={id}/>
+        <TodoItems listId={id} />
     </div>
 )
 
 const TodoList = ({lists, match:{params:{id}}, fetched}) => {
+    //implement modal...
     let toReturn = <p>Ending the mankind...</p>;
 
     if (fetched) {

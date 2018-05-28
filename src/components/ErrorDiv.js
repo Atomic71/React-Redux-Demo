@@ -16,11 +16,11 @@ export const ErrorDiv = ({ error, hideError }) => (
         timeout={300} 
         in={error ? true : false} 
         classNames="slide" >
-        <div key={error} className="error-div">
-            <p className="error-text">
+        <div key={error} className="ErrorDiv">
+            <p className="ErrorDiv-text">
                 {error}
             </p>
-            <span onClick={hideError} className="error-close">&#10005;</span>
+            <span onClick={hideError} className="ErrorDiv-close">&#10005;</span>
         </div>
     </CSSTransition>
 )

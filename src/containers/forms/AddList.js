@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { renderInputWithIcon } from './inputCreators';
+import { renderInputWithButton } from './inputCreators';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { createList } from '../../store/actions/list';
@@ -31,14 +31,15 @@ class AddList extends Component {
         const { handleSubmit } = this.props;
         return (
             <form
-                onSubmit={handleSubmit(this.AddListHandler)}>
+                onSubmit={handleSubmit(this.AddListHandler)}
+                className="AddList-Form">
                 <Field
                     autoComplete="off" 
                     onChange={this.clearErrorHandler}
                     placeholder="Enter a new list name"
                     name="AddList"
                     type="text"
-                    component={renderInputWithIcon} 
+                    component={renderInputWithButton} 
                     validate={MinLength0}/>
             </form>
         )

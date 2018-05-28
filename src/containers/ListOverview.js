@@ -12,7 +12,7 @@ const ListOverview = ({fetched, lists}) => {
         !lists.length 
         ? toReturn = (<p>"You have no lists"</p>)
         : toReturn = (
-            <TransitionGroup component="ul" className="animatedList">
+            <TransitionGroup component="ul" className="UserDashboard-list">
                 {lists.map(list => (
                     <CSSTransition
                         unmountOnExit
@@ -20,8 +20,8 @@ const ListOverview = ({fetched, lists}) => {
                         key={list.id}
                         classNames="fade"
                         timeout={300}>
-                    <div className="list-link-wrapper">
-                        <Link className="list-link" to={`/overview/${list.id}`}>
+                    <div className="UserDashboard-link-wrapper">
+                        <Link className="UserDashboard-link" to={`/overview/${list.id}`}>
                             {list.title}
                         </Link>
                     </div>

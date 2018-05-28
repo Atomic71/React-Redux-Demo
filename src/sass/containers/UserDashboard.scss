@@ -1,11 +1,11 @@
-.listOfLists {
+.UserDashboard {
     padding: 1rem 2rem;
     flex-basis: 300px;
     max-width: 300px;
     flex-shrink: 0;
     background: rebeccapurple;
 
-    & h2 {
+    &-heading {
         text-align: center;
         color: whitesmoke;
         &::after {
@@ -18,7 +18,14 @@
             opacity: .3;
         }
     }
-    & .list-link {
+
+    &-list {
+        animation-name: slideDown;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+    }
+
+    &-link {
         background: whitesmoke;
         font-size: 1.5rem;
         padding: .5rem;
@@ -28,17 +35,11 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-
+    
         &:hover {
             cursor: pointer;
             box-shadow: 0 15px 20px 1px #1b1b1b93;
             transform: translateY(-3px);
         }
     }
-}
-
-@keyframes slideDown {
-    0% { opacity: 0; transform: translateY(-10%)}
-    30% { opacity: 1; transform: translateY(50%) }
-    100% { transform: translateY(0)}
 }
