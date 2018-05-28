@@ -1,0 +1,11 @@
+.newListArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    padding-top: 2rem;
+    & h2 {
+        margin-bottom: 2rem;
+    }
+}

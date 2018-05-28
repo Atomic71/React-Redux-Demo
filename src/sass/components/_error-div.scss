@@ -1,0 +1,27 @@
+.error {
+    &-div {
+        display: flex;
+        justify-content: space-between;
+        align-self: stretch;
+        padding: .5rem 1.5rem;
+        background: orangered;
+        color: $white;
+        font-size: 1.2rem;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+    }
+    &-text {
+        font-size: 1.2rem;
+    }
+    &-close {
+        cursor: pointer;
+        transition: all .1s;
+        &:hover {
+            color: $dark;
+        }
+    }
+}

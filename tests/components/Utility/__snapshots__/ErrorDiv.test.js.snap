@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorDiv /> does not render when error is false 1`] = `null`;
+
+exports[`<ErrorDiv /> does render when there is an error 1`] = `
+<div
+  className="error-div"
+>
+  <p
+    className="error-text"
+  >
+    Some error
+  </p>
+  <span
+    className="error-close"
+    onClick={[MockFunction]}
+  >
+    ✕
+  </span>
+</div>
+`;

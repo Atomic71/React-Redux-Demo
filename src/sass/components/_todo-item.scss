@@ -1,0 +1,79 @@
+.todo {
+    margin-bottom: .5rem;
+    position: relative;
+    padding: .5rem 1rem;
+    max-width: 350px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: cornflowerblue;
+    
+    &.completed{
+        text-decoration: line-through;
+    }
+
+    &:hover > &-controls {
+        opacity: 1;
+    }
+
+
+    &-text {
+        font-size: 1.5rem;
+        text-overflow: ellipsis;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &-controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        opacity: 0;
+        transition: all .3s;
+        background: rgba(77, 77, 77, 0.821);
+        &:hover > svg{
+            transform: scale(1);
+        }
+
+        & svg {
+            fill: beige;
+            height: 2rem;width: 2rem;
+            margin-right: 1rem;
+            cursor: pointer;
+            transition: all .3s;
+            transform: scale(0);
+
+            &:hover {
+                fill: goldenrod;
+            }
+
+        }
+    }
+    &-icon {
+        padding: .5rem;
+        height: 2rem;
+        width: 2rem;
+        transition: all .2s;
+        // transform-origin: 50% 50% 0px;
+        &:hover {
+            // filter: drop-shadow( 0 15px 15px #1b1b1b);
+            // transform: translateY(-5px);
+            cursor: pointer;
+            fill: #1b1b1b;
+            &.delete {
+                fill: tomato;
+            }
+            &.change {
+                fill: cornflowerblue;
+            }
+            &.toggle {
+                fill: darkolivegreen
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.listOfLists {
+    padding: 1rem 2rem;
+    flex-basis: 300px;
+    max-width: 300px;
+    flex-shrink: 0;
+    background: rebeccapurple;
+
+    & h2 {
+        text-align: center;
+        color: whitesmoke;
+        &::after {
+            display: block;
+            content: "";
+            width: 60%;
+            height: 1px;
+            background: #1b1b1b;
+            margin: 1rem auto 2rem;
+            opacity: .3;
+        }
+    }
+    & .list-link {
+        background: whitesmoke;
+        font-size: 1.5rem;
+        padding: .5rem;
+        text-align: center;
+        transition: box-shadow .3s, transform .1s ;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 15px 20px 1px #1b1b1b93;
+            transform: translateY(-3px);
+        }
+    }
+}
+
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-10%)}
+    30% { opacity: 1; transform: translateY(50%) }
+    100% { transform: translateY(0)}
+}

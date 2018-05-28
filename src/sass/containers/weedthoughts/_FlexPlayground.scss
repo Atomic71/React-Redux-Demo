@@ -1,0 +1,73 @@
+.newListArea{
+    background: silver;
+    flex-grow: 0;
+}
+
+.workingArea {
+    align-items: stretch;
+}
+
+.Flex-Playground {
+    flex-grow: 1;
+    background: indianred;
+    display: flex;
+}
+
+.Flex-Parent {
+    display: flex;
+    flex-grow: 1;
+    // alignment of the elements
+    //column or row(default, no need to declare)?
+    flex-direction: column;
+    flex-direction: row;
+
+    //width of the items 
+    align-items: center;
+    //stretch for the full width, 
+    //center, flex-end, flex-start
+    // align-items: stretch;
+       
+    //if flex-direction is row 
+    //(usually is unless declared because it's the default), 
+    //spread the elements accross the x axis;
+    // justify-content: space-around;
+
+    flex-wrap: wrap;
+    
+    
+}
+
+
+
+.Flex-Child {
+    background: whitesmoke;
+    padding: .5rem;
+    font-size: 1rem;
+    // min-width: 300px;
+
+    //define gutter with margin
+    //usually people define it like this
+    //when they want 
+    margin: .5rem;
+    padding: .5rem;
+
+    // control one flex element
+    //if flex-directon: column - control it's height;
+    //if row - control it's width 
+    &:first-of-type{
+        // flex-grow: 1;
+        // flex-basis: 20px;
+        //middle, start, or end
+        //stretch for full width
+        // align-self: flex-end;
+        
+        // set starting width,
+        //use flex-grow for determining what to do 
+        //with the free space left
+
+        // flex-basis: 50px;
+        // use flex-grow to say how much should you take 
+        // flex-grow: 1;
+        align-items: stretch;
+    }
+}

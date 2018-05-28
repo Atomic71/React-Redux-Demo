@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserLists /> renders correctly when the lists are fetched and there are lists 1`] = `
+<ul
+  className="animatedList"
+>
+  <div
+    className="list-link-wrapper"
+  >
+    <a
+      className="list-link"
+      href={undefined}
+      onClick={[Function]}
+    >
+      a new fresh todo list
+    </a>
+  </div>
+  <div
+    className="list-link-wrapper"
+  >
+    <a
+      className="list-link"
+      href={undefined}
+      onClick={[Function]}
+    >
+      an even fresher todo list
+    </a>
+  </div>
+</ul>
+`;
+
+exports[`<UserLists /> renders correctly when the lists are fetched but there are none 1`] = `
+<p>
+  You have no lists!
+</p>
+`;
+
+exports[`<UserLists /> renders correctly when the lists are not fetched yet 1`] = `
+<div
+  className="spinner"
+>
+  <div
+    className="bounce1"
+  />
+  <div
+    className="bounce2"
+  />
+  <div
+    className="bounce3"
+  />
+</div>
+`;

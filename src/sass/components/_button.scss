@@ -1,0 +1,39 @@
+.button {
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.3rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    min-width: 200px;
+    
+    &-group {
+        display: flex;
+        left: 0;
+        justify-content: center;
+    }
+    
+    &.purple,
+    &.purple-complementary:hover {
+        background: rebeccapurple;
+        color: whitesmoke;
+    }
+    &.primary {
+        background: $dark;
+        color: $white;
+        &:hover {
+            background: $dark-hover;
+        }
+    }
+    &.processing {
+        background: $grey;
+        cursor: wait;
+    }
+    &.danger {
+        background: $danger;
+        &:hover {
+            background: $danger-hover;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.overview {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    & header {
+        background: whitesmoke;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 300;
+
+        & a {
+            font-size: 1.5rem;
+            color: #1b1b1b;
+            padding: .5rem;
+            transition: all .3s;
+
+            &:hover {
+                background: whitesmoke;
+            }
+        }
+    }
+
+    & main {
+        display: flex;
+        height: 100%;
+    }
+}
