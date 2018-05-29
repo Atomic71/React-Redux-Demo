@@ -1,14 +1,66 @@
 input {
     border: none;
     outline: none;
+    &:focus {
+        box-shadow: inset 0 0 1px 3px rgb(145, 145, 233) !important;
+    }
 }
 
 .InputElement {
     position: relative;
+    width: 350px;
     &:not(:last-of-type) {
         margin-bottom: 1rem;
     }
-    & > input {
+    &.withButton {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+        position: relative;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+        transition: all .3s;
+        & input {
+            padding: .5rem 1rem;
+            font-size: 1.3rem;
+            border: none;
+            flex-grow: 1;
+            transition: none !important;
+        }
+        & button {
+            background: rgb(185, 185, 185);
+            color: $dark;
+            font-size: 1.3rem;
+            flex-basis: 4rem;
+            padding: .5rem;
+            border: none; // transition: all .2s;
+            text-align: center;
+            align-self: stretch;
+            &:focus {
+                box-shadow: inset 0 0 1px 3px rgb(145, 145, 233); // outline: 1px solid #924ada;
+                outline: none;
+            }
+            &:hover {
+                background: #924ada;
+                cursor: pointer;
+            }
+            &.processing {
+                background: grey;
+                color: $dark;
+                cursor: wait;
+            }
+        }
+    }
+    & .Warning {
+        position: absolute;
+        left: calc(100% + 1.5rem);
+        font-size: 1.3rem;
+        color: $danger;
+        width: fit-content;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    &>input {
         background: transparent;
         display: block;
         font-size: 1.5rem;
@@ -36,24 +88,31 @@ input {
     }
     &-withButton {
         display: flex;
-        justify-content: stretch;
-        align-items: center;
+        align-items: stretch;
         position: relative;
         box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+        transition: all .3s;
         & input {
             padding: .5rem 1rem;
             font-size: 1.3rem;
             border: none;
+            flex-grow: 1;
+            transition: none !important;
         }
+        
         & button {
             background: rgb(185, 185, 185);
             color: $dark;
+            font-size: 1.3rem;
+            flex-basis: 4rem;
             padding: .5rem;
-            border: none;
-            transition: all .2s;
-            width: 2rem;
+            border: none; // transition: all .2s;
             text-align: center;
             align-self: stretch;
+            &:focus {
+                box-shadow: inset 0 0 1px 3px rgb(145, 145, 233); // outline: 1px solid #924ada;
+                outline: none;
+            }
             &:hover {
                 background: #924ada;
                 cursor: pointer;

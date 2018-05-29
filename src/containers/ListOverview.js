@@ -10,7 +10,7 @@ const ListOverview = ({fetched, lists}) => {
     let toReturn = <Spinner />
     if (fetched) {
         !lists.length 
-        ? toReturn = (<p>"You have no lists"</p>)
+        ? toReturn = (<p className="UserDashboard-info">You have no lists.<br/>You're welcome to add some!<br/>See that input to the right? <br/> Use it.</p>)
         : toReturn = (
             <TransitionGroup component="ul" className="UserDashboard-list">
                 {lists.map(list => (

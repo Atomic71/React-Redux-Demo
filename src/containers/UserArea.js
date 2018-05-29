@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Link, Switch, Route, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { fetchLists } from '../store/actions/list/index';
@@ -11,7 +11,6 @@ import { TodoListConnected as TodoList } from './TodoList';
 
 const AddList = () => (
     <div className="AddList-wrapper">
-        <h2 className="AddList-Heading">Please enter a list name to start getting stuff done!"</h2>
         <AddListForm />
     </div>
 )
@@ -41,11 +40,11 @@ class UserArea extends Component {
     render() {
         const {logout} = this.props;
         return (
-            <section className="overview">
+            <section className="UserArea">
                 <header>
                     <h1>PandaApp</h1>
                     <nav>
-                        <Link to="/overview">List overview</Link>
+                        <NavLink activeClassName="active" to="/overview" exact>List overview</NavLink>
                         <Link to="/home" onClick={logout}>Logout</Link>
                     </nav>
                 </header>

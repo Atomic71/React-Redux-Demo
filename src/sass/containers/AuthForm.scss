@@ -1,0 +1,19 @@
+.AuthForm {
+    margin-top: 5rem;
+
+    &.rejected {
+        animation: reject .5s forwards;
+        & .info-rejected {
+            animation: ShowSlowly .3s forwards ease-in;
+        }
+    }
+
+    & .info-rejected {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        position: absolute;
+        top: -2rem;
+        width: max-content;
+    }
+}
+

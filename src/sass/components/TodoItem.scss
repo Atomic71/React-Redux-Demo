@@ -1,21 +1,17 @@
 .TodoItem {
-    margin-bottom: .5rem;
     position: relative;
     padding: .5rem 1rem;
-    max-width: 350px;
     flex-grow: 0;
     flex-shrink: 0;
-    background: cornflowerblue;
-    
-    &-completed{
-        text-decoration: line-through;
+    background: $white;
+    &.completed {
+        background: $success;
+        text-decoration-line: line-through;
+        font-style: italic;
     }
-
-    &:hover > &-controls {
+    &:hover>&-controls {
         opacity: 1;
     }
-
-
     &-text {
         font-size: 1.5rem;
         text-overflow: ellipsis;
@@ -23,7 +19,6 @@
         white-space: nowrap;
         overflow: hidden;
     }
-
     &-controls {
         position: absolute;
         top: 0;
@@ -36,30 +31,27 @@
         opacity: 0;
         transition: all .3s;
         background: rgba(77, 77, 77, 0.821);
-        &:hover > svg{
+        &:hover>svg {
             transform: scale(1);
         }
-
         & svg {
             fill: beige;
-            height: 2rem;width: 2rem;
+            height: 2rem;
+            width: 2rem;
             margin-right: 1rem;
             cursor: pointer;
             transition: all .3s;
             transform: scale(0);
-
             &:hover {
                 fill: goldenrod;
             }
-
         }
     }
     &-icon {
         padding: .5rem;
         height: 2rem;
         width: 2rem;
-        transition: all .2s;
-        // transform-origin: 50% 50% 0px;
+        transition: all .2s; // transform-origin: 50% 50% 0px;
         &:hover {
             // filter: drop-shadow( 0 15px 15px #1b1b1b);
             // transform: translateY(-5px);

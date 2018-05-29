@@ -3,11 +3,12 @@
 @import "HelperClasses";
 
 
-@import "containers/Overview";
+@import "containers/UserArea";
 @import "containers/AddList";
 @import "containers/TodoList";
 @import "containers/Workspace";
 @import "containers/UserDashboard";
+@import "containers/AuthForm";
 @import "containers/Landing";
 
 @import "components/InputElement";
@@ -17,10 +18,7 @@
 @import "components/Spinner";
 @import "components/InfoMessage";
 
-@import "keyframes/slideDown";
-
-
 @import "animations/Fade";
-
-/* uncomment to resume
-// @import "containers/weedthoughts/FlexPlayground.scss" */
+@import "animations/Shake";
+@import "animations/ShowSlowly";
+@import "animations/SlideDown";

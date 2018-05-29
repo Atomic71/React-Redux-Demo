@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { removeList } from '../store/actions/list';
 import { Button } from "../components/Button";
-
+import { Icon } from '../components/Icon';
 
 const MapStateToProps = ( state ) => ({
     token: state.userData.token,
@@ -15,9 +15,7 @@ const MapDispatchToProps = ( dispatch ) => ({
 })
 
 const RemoveList = ({list, token, removeListHandler}) => (
-    <Button classes="danger" text="Delete list" 
-        clickHandler={() => removeListHandler(token, list)} 
-    />  
+    <Icon onClickHandler={() => removeListHandler(token, list)} icon="bin" itemTitle="Delete list" />
 )
 RemoveList.propTypes = {
     list: PropTypes.object.isRequired,
@@ -26,3 +24,7 @@ RemoveList.propTypes = {
 }
 
 export const RemoveListConnected = connect(MapStateToProps, MapDispatchToProps)(RemoveList)
+
+    {/* <Button classes="danger" text="X" 
+        clickHandler={() => removeListHandler(token, list)} 
+    />   */}

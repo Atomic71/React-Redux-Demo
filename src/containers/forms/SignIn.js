@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
-import {renderCheckbox, renderPasswordInput, renderTextInput} from './inputCreators';
+import {renderCheckbox, renderPasswordInput, renderTextInput, myCustomInput} from './inputCreators';
 import {connect} from 'react-redux';
 import { Button } from '../../components/Button';
 
@@ -8,17 +8,24 @@ let SignIn = ({
     handleSubmit,
     submitHandler,
     submitting,
+    submitFailed,
     shouldAnimate,
     ...props
 }) => (
     <form
-        className={`flex-center-v ${shouldAnimate && 'rejected'}`}
+        className={`AuthForm flex-center-v ${(shouldAnimate || submitFailed) && 'rejected'}`}
         onSubmit={handleSubmit(submitHandler)}>
-        {shouldAnimate && <p className="info-rejected">something went wrong, please try again</p>}
-        <Field name="username" component={renderTextInput} placeholder="Username..."/>
-        <Field
+        {shouldAnimate && <p className="info-rejected">Incorrect username/password. please, try again.</p>}
+        <Field shouldFocusOnMount 
+            name="username" 
+            type="text"
+            component={myCustomInput} 
+            placeholder="Username..."
+            />
+        <Field 
             name="password"
-            component={renderPasswordInput}
+            type="password"
+            component={myCustomInput}
             placeholder="Password..."/>
         <br/>
         <Field name="memorize" component={renderCheckbox} label="remember me?"/>
@@ -34,10 +41,9 @@ let SignIn = ({
 const validate = values => {
     const errors = {}
 
-    // if (values.username !== "pinkpanther") {(errors.username = "")}
+    if (!values.username) {(errors.username = "required")}
+    if (!values.password) {(errors.password = "required")}
     return errors
-    // values.username.trim().length < 5 && (errors.username = "must be longer than
-    // 5 characters")
 }
 
 const warn = values => {

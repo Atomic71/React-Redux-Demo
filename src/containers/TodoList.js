@@ -9,17 +9,21 @@ import { TodoItemsConnected as TodoItems } from './TodoItems';
 
 
 const List = ({list, list: {title, id}}) => (
+    <React.Fragment>
     <div className="TodoList">
-        <h2 className="TodoList-heading">{title}</h2>
-        <RemoveList list={list} />
+        <h2 className="TodoList-heading">
+            {title}
+            <RemoveList list={list} />
+        </h2>
         <AddItem listId={id}/>
         <TodoItems listId={id} />
     </div>
+    </React.Fragment>
 )
 
 const TodoList = ({lists, match:{params:{id}}, fetched}) => {
     //implement modal...
-    let toReturn = <p>Ending the mankind...</p>;
+    let toReturn = <p className="Message-info">Ending the mankind...</p>;
 
     if (fetched) {
         let requestedList = lists.find(list => list.id === +id);

@@ -1,9 +1,8 @@
 .TodoList {
-    width: 100%;
-    height: 100%;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
-    padding: 2rem 3rem;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
     &-items {
         display: flex;
         flex-wrap: wrap;
@@ -12,6 +11,23 @@
     }
     & h2 {
         font-size: 1.7rem;
+        background: $brown;
+        align-items: center;
+        color: whitesmoke;
+        display: flex;
+        padding: .5rem 1rem;
+        font-weight: lighter;
+        justify-content: space-between;
+        & svg {
+            height: 2rem;
+            width: 2rem;
+            fill: whitesmoke;
+            transition: fill .2s;
+            &:hover {
+                fill: orangered;
+                cursor: pointer;
+            }
+        }
     }
     & .button {
         align-self: flex-start;

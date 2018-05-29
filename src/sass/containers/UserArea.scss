@@ -1,9 +1,9 @@
-.overview {
+.UserArea {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     & header {
-        background: whitesmoke;
+        background: $light;
         padding: 1rem 2rem;
         display: flex;
         justify-content: space-between;
@@ -12,12 +12,14 @@
 
         & a {
             font-size: 1.5rem;
-            color: #1b1b1b;
+            color: $dark;
             padding: .5rem;
             transition: all .3s;
+            margin-right: 1.5rem;
 
-            &:hover {
-                background: whitesmoke;
+            &:hover,
+            &.active {
+                color: $primary-light;
             }
         }
     }

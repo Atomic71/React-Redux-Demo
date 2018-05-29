@@ -7,11 +7,11 @@ import autobind from 'autobind-decorator';
 import { ChangeItemForm } from '../containers/forms/ChangeItem';
 import { initialize } from 'redux-form'
  
-const Item = ({item, toggleItem, changeItem, deleteItem}) => (
+const Item = ({item:{completed, description, id}, toggleItem, changeItem, deleteItem}) => (
     <div 
-        key={item.id} 
-        className={`TodoItem ${item.completed ? "completed" : "" }`} >
-        <p className="TodoItem-text">{item.description}</p>
+        key={id} 
+        className={`TodoItem ${completed ? "completed" : "" }`} >
+        <p className="TodoItem-text">{description}</p>
         <div className="TodoItem-controls">
             <Icon onClickHandler={toggleItem} icon="clipboard" itemTitle="mark as completed" />
             <Icon onClickHandler={deleteItem} icon="bin" itemTitle="delete item" />
