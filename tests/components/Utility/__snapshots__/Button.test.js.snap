@@ -2,8 +2,10 @@
 
 exports[`Button utility component matches the expected snapshot 1`] = `
 <button
-  className="button something"
+  className="Button something"
+  disabled={undefined}
   onClick={[MockFunction]}
+  type={undefined}
 >
   Andrej's Button
 </button>
