@@ -26,36 +26,15 @@ class MakeField extends Component {
     }
 
     render() {
+        // destructure the this.props object in order to get the properties for the <Field />
         const {
-            name, // name in form
-            type, // <input type />
-            placeholder, // self
-            shouldFocusOnMount,
-            touchFieldImmediately, // should validation start as user enters the field
-            validate, // check for errors
-            warn, // serves no purpose so far
-            negativeFeedback, // custom bad input message
-            positiveFeedback, // custom good input message
-            noPositiveFeedback, // don't notify user on good input
-            hasButton, // should it have a button?
+            form, touchFieldImmediately, errorDivVisible, hideErrorDiv, // no need for these
+            ...rest // gather the ones that need forwarding
         } = this.props;
-
-
         return (
-            <Field
-                component={myCustomInput} // default 
-                key={name}
-                name={name}
-                type={type} //required props
-                placeholder={placeholder}
-                shouldFocusOnMount={shouldFocusOnMount}
-                validate={validate}
-                noPositiveFeedback={noPositiveFeedback}
-                warn={warn}
-                negativeFeedback={negativeFeedback}
-                positiveFeedback={positiveFeedback}
+            <Field {...rest}
                 onChange={this.onChangeHandler}
-                hasButton={hasButton}
+                component={myCustomInput}
             />
         )
     }

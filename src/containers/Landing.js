@@ -41,7 +41,7 @@ class Landing extends Component {
         const { tryLogin } = this.props;
         return new Promise(
             (resolve, reject) => tryLogin(values, resolve, reject)
-        ).then(() => console.log("resolved"))
+        ).then(() => this.props.history.push('/overview'))
             .catch(animateForm)
     }
 

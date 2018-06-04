@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link, Switch, Route, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -25,8 +25,8 @@ const UserWorkspace = () => (
     <div className="Workspace">
         <ErrorDiv />
         <Switch>
-            <Route path="/overview/:id" component={TodoList}/>
-            <Route path="/overview" render={AddList}/>
+            <Route path="/overview/:id" component={TodoList} />
+            <Route path="/overview" render={AddList} />
         </Switch>
     </div>
 )
@@ -34,18 +34,18 @@ const UserWorkspace = () => (
 
 class UserArea extends Component {
     componentDidMount() {
-        const { token, fetchUserLists } = this.props; 
-        token && fetchUserLists(token) 
+        const { token, fetchUserLists } = this.props;
+        token && fetchUserLists(token)
     }
     render() {
-        const {logout} = this.props;
+        const { logout } = this.props;
         return (
             <section className="UserArea">
                 <header>
                     <h1>PandaApp</h1>
                     <nav>
                         <NavLink activeClassName="active" to="/overview" exact>List overview</NavLink>
-                        <Link to="/home" onClick={logout}>Logout</Link>
+                        <Link to="/" onClick={logout}>Logout</Link>
                     </nav>
                 </header>
                 <main>
@@ -60,9 +60,9 @@ class UserArea extends Component {
 
 const mapStateToProps = (state) => ({ token: state.userData.token })
 
-const mapDispatchToProps = (dispatch) => ({ 
+const mapDispatchToProps = (dispatch) => ({
     fetchUserLists: (token) => dispatch(fetchLists(token)),
-    logout: () => dispatch(tryLogout()) 
+    logout: () => dispatch(tryLogout())
 })
 
 export const UserAreaConnected = connect(mapStateToProps, mapDispatchToProps)(UserArea);
